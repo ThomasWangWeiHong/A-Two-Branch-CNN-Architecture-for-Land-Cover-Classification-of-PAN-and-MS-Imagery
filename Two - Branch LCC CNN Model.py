@@ -173,8 +173,7 @@ def training_data_generation(DATA_DIR, img_height_size, img_width_size, label_li
         ms_to_pan_ratio = metadata['transform'][0] / metadata_pan['transform'][0]
         
         if (img_height_size % ms_to_pan_ratio) != 0 or (img_width_size % ms_to_pan_ratio) != 0:
-            raise ValueError('Please make sure that both img_height_size and img_width_size can be divided by {}'\
-                             .format(int(ms_to_pan_ratio)))
+            raise ValueError('Please make sure that both img_height_size and img_width_size can be divided by {}'.format(int(ms_to_pan_ratio)))
         
         mask = training_mask_generation(img_pan_files[file], polygon_files[file], labels = label_list)
         
