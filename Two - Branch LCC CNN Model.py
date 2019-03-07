@@ -220,8 +220,7 @@ def TBLCCCNN_Model(pan_image_height_size, pan_image_width_size, ms_to_pan_ratio,
     """
     
     if (pan_image_height_size % ms_to_pan_ratio) != 0 or (pan_image_width_size % ms_to_pan_ratio) != 0:
-        raise ValueError('Please make sure that both pan_image_height_size and pan_image_width_size can be divided by \
-                          {}'.format(int(ms_to_pan_ratio)))
+        raise ValueError('Please make sure that both pan_image_height_size and pan_image_width_size can be divided by {}'.format(int(ms_to_pan_ratio)))
     
     pan_img_input = Input(shape = (pan_image_height_size, pan_image_width_size, 1))
     conv_1_pan = Conv2D(n1_pan, (7, 7), padding = 'same', activation = 'relu')(pan_img_input)
